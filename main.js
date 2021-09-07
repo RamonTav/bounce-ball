@@ -15,7 +15,7 @@ window.onload   = function() {
       var baseRadius   = 100,
           offsetRadius = 50;
 
-      var baseBlue     =   0,
+      var baseBlue     =  40,
           offsetBlue   = 255;
 
       var baseAlpha    = .5,
