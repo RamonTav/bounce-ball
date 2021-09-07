@@ -4,7 +4,9 @@ body {
 }
 
 body {
-   background-color: #2f3f73;
+   background-color: #000;
+
+}   
 
 #canvas {
    display: block;
