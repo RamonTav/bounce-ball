@@ -1,16 +1,16 @@
 window.onload   = function() {
        var canvan      = document.getElementById("canvas"),
            context     = canvan.getContext("2d"),
-           width.      = canvan.width = window.innerWidth,
+           width       = canvan.width = window.innerWidth,
            height      = canvan.height = window.innerHeight;
 
        var baseX       = width  * .5;
 
        var baseY       = height * .5,
-           offsetY     = height * .4;
+           offsetY     = height * .333;
 
       var angle        =  0,
-          speed        = .3;
+          speed        = .02;
 
       var baseRadius   = 100,
           offsetRadius = 50;
@@ -25,11 +25,11 @@ window.onload   = function() {
 
    function render() {
       var  delta = Math.sin (angle),
-           x = centerX,   
-           y = centerY + offsetY * delta,
-           radius = baseRadius + offsetRadius * Math.abs(delta)),
+           x = baseX,   
+           y = baseY + offsetY * delta,
+           radius = baseRadius + offsetRadius * Math.abs(delta),
            blue = baseBlue + offsetBlue * Math.abs(delta),
-           alpha = baseAlpha + offsetAlpha Math.abs(delta);
+           alpha = baseAlpha + offsetAlpha * Math.abs(delta);
           
           context.clearRect(0, 0, width, height);
           context.beginPath();
