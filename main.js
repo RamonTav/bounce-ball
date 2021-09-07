@@ -6,8 +6,8 @@ window.onload   = function() {
 
        var baseX       = width  * .5;
 
-       var baseY       = height * .5,
-           offsetY     = height * .333;
+       var baseY       = height * 1,
+           offsetY     = height * .915;
 
       var angle        =  0,
           speed        = .02;
@@ -15,8 +15,8 @@ window.onload   = function() {
       var baseRadius   = 100,
           offsetRadius = 50;
 
-      var baseBlue     = 128,
-          offsetBlue   = 128;
+      var baseBlue     =   0,
+          offsetBlue   = 255;
 
       var baseAlpha    = .5,
         offsetAlpha    = .6;
@@ -24,11 +24,11 @@ window.onload   = function() {
    render();
 
    function render() {
-      var  delta = Math.sin (angle),
+      var  delta = Math.abs(Math.sin(angle)),
            x = baseX,   
-           y = baseY + offsetY * delta,
+           y = baseY - offsetY * delta,
            radius = baseRadius + offsetRadius * Math.abs(delta),
-           blue = baseBlue + offsetBlue * -delta, 
+           blue = baseBlue + offsetBlue * delta, 
            alpha = baseAlpha;
           
           context.clearRect(0, 0, width, height);
