@@ -28,8 +28,8 @@ window.onload   = function() {
            x = baseX,   
            y = baseY + offsetY * delta,
            radius = baseRadius + offsetRadius * Math.abs(delta),
-           blue = baseBlue + offsetBlue * Math.abs(delta),
-           alpha = baseAlpha + offsetAlpha * Math.abs(delta);
+           blue = baseBlue + offsetBlue * -delta, 
+           alpha = baseAlpha;
           
           context.clearRect(0, 0, width, height);
           context.beginPath();
