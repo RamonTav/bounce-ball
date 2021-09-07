@@ -17,7 +17,7 @@ window.onload   = function() {
           delta2       =   0;
           delta3       =   0;
 
-      var baseRadius   = 100,
+      var baseRadius   = 160,
           offsetRadius = 50;
 
       var baseBlue     =  40,
@@ -35,7 +35,7 @@ window.onload   = function() {
            delta1 = delta,
            x = baseX,   
            y = baseY - offsetY * delta,
-           radius = baseRadius + offsetRadius * Math.abs(delta),
+           radius = baseRadius + offsetRadius * Math.abs(delta) * 0,
            blue = baseBlue + offsetBlue * delta, 
            alpha = baseAlpha;
           
