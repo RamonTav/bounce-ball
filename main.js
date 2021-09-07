@@ -7,10 +7,15 @@ window.onload   = function() {
        var baseX       = width  * .5;
 
        var baseY       = height * 1,
-           offsetY     = height * .915;
+           offsetY     = height * .82;
 
-      var angle        =  0,
-          speed        = .02;
+       var angle        =   0,
+           speed        = .02;
+
+
+      var delta1       =   0;
+          delta2       =   0;
+          delta3       =   0;
 
       var baseRadius   = 100,
           offsetRadius = 50;
@@ -19,12 +24,15 @@ window.onload   = function() {
           offsetBlue   = 255;
 
       var baseAlpha    = .5,
-        offsetAlpha    = .6;
-   
+         offsetAlpha   = .6;
+
    render();
 
    function render() {
-      var  delta = Math.abs(Math.sin(angle)),
+      var  delta = Math.abs(Math.sin(angle));
+           delta3 = delta2,
+           delta2 = delta1,
+           delta1 = delta,
            x = baseX,   
            y = baseY - offsetY * delta,
            radius = baseRadius + offsetRadius * Math.abs(delta),
@@ -39,10 +47,15 @@ window.onload   = function() {
 
           angle += speed;
 
-      requestAnimationFrame(render);
+    var  m2 = delta1 - delta2,
+         m1 = delta2 - delta3; 
+      if (m1 < 0 && m2 > 0) {     
+      var sound = document.getElementById("sound");
+      sound.play();
+         }
 
+      requestAnimationFrame(render);
 }
 
 };
-
 
