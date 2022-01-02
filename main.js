@@ -10,14 +10,14 @@ window.onload   = function() {
            offsetY     = height * .82;
 
        var angle        =   0,
-           speed        = .02;
+           speed        = .04;
 
 
       var delta1       =   0;
           delta2       =   0;
           delta3       =   0;
 
-      var baseRadius   = 160,
+      var baseRadius   = 320,
           offsetRadius = 50;
 
       var baseRed      =  40;
