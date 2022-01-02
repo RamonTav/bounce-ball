@@ -20,8 +20,13 @@ window.onload   = function() {
       var baseRadius   = 160,
           offsetRadius = 50;
 
-      var baseBlue     =  40,
+      var baseRed      =  40;
+          offsetRed    = 255;
+          RedEn        =   0;
+
+          baseBlue     =  40,
           offsetBlue   = 255;
+          BlueEn       =   1;
 
       var baseAlpha    = .5,
          offsetAlpha   = .6;
@@ -36,13 +41,14 @@ window.onload   = function() {
            x = baseX,   
            y = baseY - offsetY * delta,
            radius = baseRadius + offsetRadius * Math.abs(delta) * 0,
-           blue = baseBlue + offsetBlue * delta, 
+           blue = (baseBlue + offsetBlue * delta)*BlueEn,
+           red = (baseRed + offsetRed * delta)*RedEn,
            alpha = baseAlpha;
           
           context.clearRect(0, 0, width, height);
           context.beginPath();
           context.arc(x , y, radius, 0, Math.PI * 2, false);
-          context.fillStyle = "rgba( 0, 0, " + blue + ", " + alpha + ")";
+          context.fillStyle = "rgba( " + red + ", 0, " + blue + ", " + alpha + ")";
           context.fill();
 
           angle += speed;
@@ -52,6 +58,8 @@ window.onload   = function() {
       if (m1 < 0 && m2 > 0) {     
       var sound = document.getElementById("sound");
       sound.play();
+         BlueEn=!BlueEn;
+         RedEn=!RedEn;
          }
 
       requestAnimationFrame(render);
