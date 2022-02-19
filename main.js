@@ -1,5 +1,4 @@
 window.onload   = function() {
-       window.scrollTo(0,1);
        var canvan      = document.getElementById("canvas"),
            context     = canvan.getContext("2d"),
            width       = canvan.width = window.innerWidth,
@@ -67,4 +66,11 @@ window.onload   = function() {
 }
 
 };
+
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 
