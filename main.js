@@ -1,4 +1,5 @@
 window.onload   = function() {
+       window.scrollTo(0,1);
        var canvan      = document.getElementById("canvas"),
            context     = canvan.getContext("2d"),
            width       = canvan.width = window.innerWidth,
